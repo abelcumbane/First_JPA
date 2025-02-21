@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "STUDENT")
+@Table(name = "student")
 public class Student {
 	
 	@Id
@@ -22,10 +22,11 @@ public class Student {
 	@Column(name = "age")
 	private int age;
 	
+	public Student() {
+		
+	}
 	
-	public Student(int id, String name, int age) {
-		super();
-		this.id = id;
+	public Student(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
@@ -58,9 +59,6 @@ public class Student {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-	
-	
-	
+	}	
 
 }
