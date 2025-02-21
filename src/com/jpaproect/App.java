@@ -13,9 +13,21 @@ public class App {
 		
 		entityManager.getTransaction().begin();
 		
-		Student s = new Student("A", 25);
+		//Faz insercao na Tabela student da Base de Dados
+		//Student s = new Student("Abel", 25,"Rua 4, Maputo");
 		
-		entityManager.persist(s);
+		//Faz insercao na Tabela person da Base de Dados
+		//Person p = new Person("Puto","puto@emal.com");
+		
+		//Faz a leitura dos dados que estao na tabela person na BD:
+		//Person p = entityManager.find(Person.class, 2);
+		//System.out.println(p);
+		
+		Person p = entityManager.find(Person.class, 2);
+		entityManager.remove(p);
+
+		
+		//entityManager.persist(p);
 		entityManager.getTransaction().commit();
 		
 		entityManager.close();

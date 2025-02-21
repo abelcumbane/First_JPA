@@ -22,13 +22,25 @@ public class Student {
 	@Column(name = "age")
 	private int age;
 	
+	@Column
+	private String adress;
+	
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
 	public Student() {
 		
 	}
 	
-	public Student(String name, int age) {
+	public Student(String name, int age, String adress) {
 		this.name = name;
 		this.age = age;
+		this.adress = adress;
 	}
 
 
