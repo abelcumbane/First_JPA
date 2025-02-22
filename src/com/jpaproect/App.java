@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 public class App {
 	
@@ -48,8 +49,20 @@ public class App {
 		*/
 		
 		//JPQL statement
-		Query query = entityManager.createQuery("SELECT p FROM Person p WHERE p.name LIKE '%el'");
-		List<Person> people = (List<Person>) query.getResultList();
+		//Plataform independent
+		
+		/*
+		  Query query = entityManager.createNativeQuery("SELECT * FROM person",Person.class);
+		  List<Person> people = (List<Person>) query.getResultList();
+		*/
+		
+		//NamedQuery
+			//TypedQuery<Person> query = entityManager.createNamedQuery("person.getAll", Person.class);
+			
+			TypedQuery<Person> query = entityManager.createNamedQuery("person.getPersonById", Person.class);
+			query.setParameter("id", 4);
+		
+		List<Person> people = query.getResultList();
 		
 		for(Person p : people) {
 			System.out.println(p);
