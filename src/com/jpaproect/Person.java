@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 	@NamedQuery(name = "person.getPersonByName", query = "SELECT p FROM Person p WHERE p.name = :name"),
 	@NamedQuery(name = "person.getPersonById", query = "SELECT p FROM Person p WHERE p.id = :id" )
 })
-public class Person {
+public class Person {  
 	
 
 		@Id

@@ -13,4 +13,5 @@ module First_JPA {
 	requires org.hibernate.orm.core;
 
     opens com.jpaproect to org.hibernate.orm.core;
+    opens com.inheritacestrategy to org.hibernate.orm.core;
 }
