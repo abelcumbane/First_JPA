@@ -14,4 +14,5 @@ module First_JPA {
 
     opens com.jpaproect to org.hibernate.orm.core;
     opens com.inheritacestrategy to org.hibernate.orm.core;
+    opens com.mappedsuperclass to org.hibernate.orm.core;
 }
