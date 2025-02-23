@@ -13,11 +13,11 @@ public class App {
 		
 		entityManager.getTransaction().begin();
 		
-		Bus bus = new Bus("Name of Bus",100);
-		Car car = new Car("Name of Car",200);
+		Bus b = new Bus("Name of Bus",100);
+		Car c = new Car("Name of Car",200);
 		
-		entityManager.persist(bus);
-		entityManager.persist(car);
+		entityManager.persist(b);
+		entityManager.persist(c);
 		
 		entityManager.getTransaction().commit();
 		

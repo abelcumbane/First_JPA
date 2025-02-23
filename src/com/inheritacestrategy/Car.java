@@ -1,10 +1,8 @@
 package com.inheritacestrategy;
 
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity
-@DiscriminatorValue(value = "C")
 public class Car extends Vehicle {
 	
 	private int speed;
@@ -26,7 +24,5 @@ public class Car extends Vehicle {
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	
-	
 
 }

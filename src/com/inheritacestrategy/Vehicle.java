@@ -1,6 +1,5 @@
 package com.inheritacestrategy;
 
-import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,12 +10,11 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "vehicle")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Vehicle {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	
 	private String name;
