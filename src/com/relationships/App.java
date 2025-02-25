@@ -13,19 +13,6 @@ public class App {
 		
 		entityManager.getTransaction().begin();
 		
-		Address address = new Address();
-		address.setStreetName("Rua 4, Maputo");
-		address.setZipCode(144);
-		
-		
-		Employee employee = new Employee();
-		employee.setEmployeeName("Abel");
-		employee.setAddress(address);
-		
-		address.setEmployee(employee);
-		
-		entityManager.persist(employee);
-		entityManager.persist(address);
 		
 		entityManager.getTransaction().commit();
 		
